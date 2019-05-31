@@ -3,20 +3,27 @@ package entidades;
 import java.util.Date;
 
 public class Pessoa {
-
- 	String nome;
-	String rg;
-	String telefone;
-	String email;
-	String cpf; //String porque e improvavel que ira ter um tipo de operação matematica
-	String bairro;
-	String cidade;
-	char uf = 2;
-	boolean sexo;
-	String categoia;
-	Date dataNascimento;
 	
+	private int id;
+	private String nome;
+	private String rg;
+	private String telefone;
+	private String email;
+	private String cpf; //String porque e improvavel que ira ter um tipo de operação matematica
+	private String bairro;
+	private String cidade;
+	private String uf;
+	private boolean sexo;
+	private String categoia;
+	private Date dataNascimento;
+		
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -59,10 +66,10 @@ public class Pessoa {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-	public char getUf() {
+	public String getUf() {
 		return uf;
 	}
-	public void setUf(char uf) {
+	public void setUf(String uf) {
 		this.uf = uf;
 	}
 	public boolean isSexo() {
@@ -83,6 +90,7 @@ public class Pessoa {
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
+	
 	
 	
 }	
