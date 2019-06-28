@@ -1,28 +1,26 @@
 package entidades;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Alimento {
 
-	private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	private String nome;
 	private double quantideEstoque;
 	private String categoria;
 	private String principioAtivo;
 
-	private boolean Tipo; // Entrada e Saida
-
-	public boolean isTipo() {
-		return Tipo;
-	}
-
-	public void setTipo(boolean tipo) {
-		Tipo = tipo;
-	}
-
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

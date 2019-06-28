@@ -2,13 +2,20 @@ package entidades;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Animal {
-	
-	//Private server para encapsulamento, Eu acho
-	
-	private int id;
+
+	// Private serve para encapsulamento, Eu acho
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	private String identificacao;
-	private String nome;
 	private String pelagem;
 	private boolean sexo;
 	private String especie;
@@ -16,23 +23,11 @@ public class Animal {
 	private String categoria;
 	private Date dataNascimento;
 
-	private boolean Tipo; // Entrada e Saida
-
-	Pesagens pesagens = new Pesagens();
-
-	public boolean isTipo() {
-		return Tipo;
-	}
-
-	public void setTipo(boolean tipo) {
-		Tipo = tipo;
-	}
-
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -42,14 +37,6 @@ public class Animal {
 
 	public void setIdentificacao(String identificacao) {
 		this.identificacao = identificacao;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 
 	public String getPelagem() {
