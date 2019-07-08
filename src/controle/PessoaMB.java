@@ -1,11 +1,13 @@
 package controle;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import banco.DAOGenerico;
 import entidades.Pessoa;
 
+@ManagedBean
+@ViewScoped
 public class PessoaMB {
 
 	private Pessoa pessoa = new Pessoa();

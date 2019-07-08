@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 public class Animal {
 
-	// Private serve para encapsulamento, Eu acho
+	// Private = encapsulamento
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

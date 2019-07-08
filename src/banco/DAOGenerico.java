@@ -13,6 +13,7 @@ public class DAOGenerico<T> {
 		this.classe = classe;
 	}
 
+	//metodo com parametro e retorno
 	public T salvar(T objeto) {
 		entityManager = Fabrica.get().createEntityManager();
 		try {

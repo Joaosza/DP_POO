@@ -1,8 +1,13 @@
 package controle;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
 import banco.DAOGenerico;
 import entidades.Medicamento;
 
+@ManagedBean
+@ViewScoped
 public class MedicamentoMB {
 
 	private Medicamento medicamento = new Medicamento();

@@ -1,8 +1,13 @@
 package controle;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
 import banco.DAOGenerico;
 import entidades.Animal;
 
+@ManagedBean
+@ViewScoped
 public class AnimalMB {
 
 	private Animal animal = new Animal();

@@ -16,6 +16,7 @@ public class Alimento {
 	private String categoria;
 	private String principioAtivo;
 
+	//Com retorno sem parametro
 	public Long getId() {
 		return id;
 	}

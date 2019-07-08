@@ -4,8 +4,8 @@ import banco.DAOGenerico;
 import entidades.Alimento;
 import entidades.Animal;
 import entidades.Fazenda;
+import entidades.Funcionario;
 import entidades.Medicamento;
-import entidades.Pessoa;
 
 public class Principal {
 
@@ -13,22 +13,26 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		//Pessoa
+				
+		//TESTE HERANÇA
 		
-		Pessoa pessoa = new Pessoa();
-		DAOGenerico<Pessoa> daoP = new DAOGenerico<>(Pessoa.class);
+		Funcionario fun = new Funcionario();
+		DAOGenerico<Funcionario> daoFuncionario = new DAOGenerico<>(Funcionario.class);
 
-		pessoa.setNome("bruno");
-		pessoa.setRg("123123123");
-		pessoa.setTelefone("456456456");
-		pessoa.setEmail("joao@hotmail.com");
-		pessoa.setCpf("789789789789");
-		pessoa.setBairro("Jardim das olivas");
-		pessoa.setCidade("Paranavai");
-		pessoa.setSexo(true);
-		pessoa.setUf("PR");
-		pessoa.setCategoia("Funcionario");
-		daoP.salvar(pessoa);
+		fun.setNome("pereira");
+		fun.setRg("789456132");
+		fun.setTelefone("456789132");
+		fun.setEmail("marcos@gmail.com");
+		fun.setCpf("12348789465");
+		fun.setBairro("São Jorge");
+		fun.setCidade("Paranavai");
+		fun.setSexo(true);
+		fun.setUf("PR");
+		fun.setCategoia("Funcionario");
+		fun.setLogin("joaoMarcos");
+		fun.setSenha("456789123");
+		daoFuncionario.salvar(fun);
+		
 
 		// Medicamento
 
@@ -81,3 +85,21 @@ public class Principal {
 	}
 
 }
+
+
+//Pessoa
+
+//Pessoa pessoa = new Pessoa();
+//DAOGenerico<Pessoa> daoP = new DAOGenerico<>(Pessoa.class);
+//
+//pessoa.setNome("bruno");
+//pessoa.setRg("123123123");
+//pessoa.setTelefone("456456456");
+//pessoa.setEmail("joao@hotmail.com");
+//pessoa.setCpf("789789789789");
+//pessoa.setBairro("Jardim das olivas");
+//pessoa.setCidade("Paranavai");
+//pessoa.setSexo(true);
+//pessoa.setUf("PR");
+//pessoa.setCategoia("Funcionario");
+//daoP.salvar(pessoa);
