@@ -1,11 +1,111 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
-<h:head></h:head> 
-<body> 
+<h:head>
 
-</body> 
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+		crossorigin="anonymous" />
+
+</h:head>
+<body>
+
+	<h:form id="formulariodeCadastroPessoa">
+
+		<h:panelGrid columns="2">					
+		Nome :<p:inputText id="nomePessoa" value="#{pessoaMB.pessoa.nome}"
+				required="true" requiredMessage="Preencha o nome" />
+			<p:message for="nomePessoa" />
+		</h:panelGrid>
+
+		<h:panelGrid class="mt-2" columns="2">					
+		Bairro :<p:inputText id="nomeBairro" value="#{pessoaMB.pessoa.bairro}"
+				required="true" requiredMessage="Preencha o bairro" />
+			<p:message for="nomeBairro" />
+		</h:panelGrid>
+
+		<h:panelGrid columns="2">
+			Cidade :<p:inputText id="nomeCidade"
+				value="#{pessoaMB.pessoa.cidade}" required="true"
+				requiredMessage="Preencha a Cidade" />
+			<p:message for="nomeCidade" />
+		</h:panelGrid>
+
+		<h:panelGrid columns="2">
+			CPF :<p:inputText id="nomecpf" value="#{pessoaMB.pessoa.cpf}"
+				required="true" requiredMessage="Preencha o bairro" />
+			<p:message for="nomecpf" />
+		</h:panelGrid>
+
+
+		<h:panelGrid columns="2">
+			RG :<p:inputText id="nomeRg" value="#{pessoaMB.pessoa.rg}"
+				required="true" requiredMessage="Preencha o bairro" />
+			<p:message for="nomeRg" />
+		</h:panelGrid>
+
+
+		<h:panelGrid columns="2">
+			Data Nascimento :<p:inputText id="nomeDate"
+				value="#{pessoaMB.pessoa.dataNascimento}" required="true"
+				requiredMessage="Preencha o bairro" />
+			<p:message for="nomeDate" />
+		</h:panelGrid>
+
+
+		<h:panelGrid columns="2">
+			Email :<p:inputText id="nomeEmail" value="#{pessoaMB.pessoa.email}"
+				required="true" requiredMessage="Preencha o bairro" />
+			<p:message for="nomeEmail" />
+		</h:panelGrid>
+
+
+		<h:panelGrid columns="2">
+			UF :<p:inputText id="nomeuf" value="#{pessoaMB.pessoa.uf}"
+				required="true" requiredMessage="Preencha o bairro" />
+			<p:message for="nomeuf" />
+		</h:panelGrid>
+
+		<h:panelGrid columns="2">
+			Sexo :<p:inputText id="nomeSexo" value="#{pessoaMB.pessoa.sexo}"
+				required="true" requiredMessage="Preencha o bairro" />
+			<p:message for="nomeSexo" />
+		</h:panelGrid>
+
+
+		<h:panelGrid columns="2">
+			Telefone :<p:inputText id="nomeTelefone"
+				value="#{pessoaMB.pessoa.telefone}" required="true"
+				requiredMessage="Preencha o bairro" />
+			<p:message for="nomeTelefone" />
+		</h:panelGrid>
+
+		<h:panelGrid columns="2">
+			Categoria :<p:inputText id="nomeCategoria"
+				value="#{pessoaMB.pessoa.categoia}" required="true"
+				requiredMessage="Preencha o bairro" />
+			<p:message for="nomeCategoria" />
+		</h:panelGrid>
+
+		<div id="BotaoCadastro">
+
+			<h:panelGrid class="mt-4" columns="1">
+				<p:commandButton update="" value="Salvar"
+					actionListener="#{pessoaMB.inserir()}" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="1">
+				<a class="btn btn-dark mt-5" href="inicio.xhtml" role="button">Voltar</a>
+			</h:panelGrid>
+		</div>
+
+
+	</h:form>
+
+</body>
 </html>

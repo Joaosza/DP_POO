@@ -1,5 +1,6 @@
 package banco;
 
+import java.util.List;
 import javax.persistence.EntityManager;
 
 import Fabrica.Fabrica;
@@ -8,13 +9,11 @@ public class DAOGenerico<T> {
 
 	private static EntityManager entityManager;
 	private Class<T> classe;
-	
-	//construtor
+
 	public DAOGenerico(Class<T> classe) {
 		this.classe = classe;
 	}
 
-	//metodo com parametro e retorno
 	public T salvar(T objeto) {
 		entityManager = Fabrica.get().createEntityManager();
 		try {
@@ -30,4 +29,4 @@ public class DAOGenerico<T> {
 		return objeto;
 	}
 
-}
+	}
