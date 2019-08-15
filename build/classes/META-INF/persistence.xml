@@ -10,10 +10,7 @@
 		<class>entidades.Fazenda</class>
 		<class>entidades.Medicamento</class>
 		<class>entidades.Pesagens</class>
-		<class>entidades.Proprietario</class>
-		<class>entidades.Funcionario</class>
 		
-		 <exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/dpPoo" />
 			<property name="javax.persistence.jdbc.user" value="root" />

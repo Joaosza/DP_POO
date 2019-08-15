@@ -1,6 +1,5 @@
 package entidades;
 
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,8 +14,6 @@ public class Pesagens {
 	private Long id;
 	private String dia;
 	private String peso;
-
-	Animal animal = new Animal();
 
 	public Long getId() {
 		return id;
@@ -42,19 +39,10 @@ public class Pesagens {
 		this.peso = peso;
 	}
 
-	public Animal getAnimal() {
-		return animal;
-	}
-
-	public void setAnimal(Animal animal) {
-		this.animal = animal;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((animal == null) ? 0 : animal.hashCode());
 		result = prime * result + ((dia == null) ? 0 : dia.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((peso == null) ? 0 : peso.hashCode());
@@ -70,11 +58,6 @@ public class Pesagens {
 		if (getClass() != obj.getClass())
 			return false;
 		Pesagens other = (Pesagens) obj;
-		if (animal == null) {
-			if (other.animal != null)
-				return false;
-		} else if (!animal.equals(other.animal))
-			return false;
 		if (dia == null) {
 			if (other.dia != null)
 				return false;

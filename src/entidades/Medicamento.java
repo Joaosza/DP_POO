@@ -13,7 +13,7 @@ public class Medicamento {
 	private Long id;
 	private String principioAtivo;
 	private String fabricante;
-	private String quantideEstoque;
+	private String estoque;
 
 	public Long getId() {
 		return id;
@@ -40,11 +40,11 @@ public class Medicamento {
 	}
 
 	public String getQuantideEstoque() {
-		return quantideEstoque;
+		return estoque;
 	}
 
 	public void setQuantideEstoque(String quantideEstoque) {
-		this.quantideEstoque = quantideEstoque;
+		this.estoque = quantideEstoque;
 	}
 
 	@Override
@@ -54,7 +54,7 @@ public class Medicamento {
 		result = prime * result + ((fabricante == null) ? 0 : fabricante.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((principioAtivo == null) ? 0 : principioAtivo.hashCode());
-		result = prime * result + ((quantideEstoque == null) ? 0 : quantideEstoque.hashCode());
+		result = prime * result + ((estoque == null) ? 0 : estoque.hashCode());
 		return result;
 	}
 
@@ -82,10 +82,10 @@ public class Medicamento {
 				return false;
 		} else if (!principioAtivo.equals(other.principioAtivo))
 			return false;
-		if (quantideEstoque == null) {
-			if (other.quantideEstoque != null)
+		if (estoque == null) {
+			if (other.estoque != null)
 				return false;
-		} else if (!quantideEstoque.equals(other.quantideEstoque))
+		} else if (!estoque.equals(other.estoque))
 			return false;
 		return true;
 	}

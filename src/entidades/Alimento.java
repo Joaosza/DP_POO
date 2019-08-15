@@ -12,7 +12,7 @@ public class Alimento {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
-	private String quantideEstoque;
+	private String estoque;
 	private String categoria;
 	private String principioAtivo;
 
@@ -33,11 +33,11 @@ public class Alimento {
 	}
 
 	public String getQuantideEstoque() {
-		return quantideEstoque;
+		return estoque;
 	}
 
 	public void setQuantideEstoque(String quantideEstoque) {
-		this.quantideEstoque = quantideEstoque;
+		this.estoque = quantideEstoque;
 	}
 
 	public String getCategoria() {
@@ -64,7 +64,7 @@ public class Alimento {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((principioAtivo == null) ? 0 : principioAtivo.hashCode());
-		result = prime * result + ((quantideEstoque == null) ? 0 : quantideEstoque.hashCode());
+		result = prime * result + ((estoque == null) ? 0 : estoque.hashCode());
 		return result;
 	}
 
@@ -97,14 +97,12 @@ public class Alimento {
 				return false;
 		} else if (!principioAtivo.equals(other.principioAtivo))
 			return false;
-		if (quantideEstoque == null) {
-			if (other.quantideEstoque != null)
+		if (estoque == null) {
+			if (other.estoque != null)
 				return false;
-		} else if (!quantideEstoque.equals(other.quantideEstoque))
+		} else if (!estoque.equals(other.estoque))
 			return false;
 		return true;
 	}
-
-	// Com retorno sem parametro
 
 }
