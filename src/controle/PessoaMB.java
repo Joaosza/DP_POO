@@ -14,7 +14,6 @@ import entidades.Pessoa;
 public class PessoaMB {
 
 	private Pessoa pessoa = new Pessoa();
-	private List<Pessoa> pessoas = new ArrayList<>();
 	private DAOGenerico<Pessoa> daoP = new DAOGenerico<>(Pessoa.class);
 
 	public void inserir() {
@@ -32,13 +31,4 @@ public class PessoaMB {
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
-
-	public List<Pessoa> getPessoas() {
-		return pessoas;
-	}
-
-	public void setPessoas(List<Pessoa> pessoas) {
-		this.pessoas = pessoas;
-	}
-
 }

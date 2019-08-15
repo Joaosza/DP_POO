@@ -16,7 +16,7 @@
 	<h:form id="formulariodeCadastroPessoa">
 
 		<div class="alert alert-dark text-center" role="alert">
-			<h2>Cadastro de Alimento</h2>
+			<h2>Cadastro de Animal</h2>
 		</div>
 
 		<h:panelGrid cellpadding="10">
@@ -69,18 +69,12 @@
 					requiredMessage="Preencha a Sexo" />
 				<p:message for="AnimalDate" />
 			</h:panelGrid>
-			
 
+
+			<p:commandButton update="" value="Cadastrar"
+				actionListener="#{animalMB.salvar()}" />
 		</h:panelGrid>
 
-		<div id="BotaoCadastro">
-			<h:panelGrid class="mt-4" columns="1">
-				<p:commandButton update="" value="Salvar"
-					actionListener="#{alimentoMB.salvar()}" />
-				<a class="btn btn-dark mt-5" href="inicio.xhtml" role="button">Voltar</a>
-				<a class="btn btn-info mt-5" href="#" role="button">Listar</a>
-			</h:panelGrid>
-		</div>
 	</h:form>
 
 </body>

@@ -27,22 +27,22 @@
 					requiredMessage="Preencha o nome do Alimento" />
 				<p:message for="AlimentoNome" />
 			</h:panelGrid>
-			
+
 			<h:panelGrid columns="2">
 			Categoria :<p:inputText id="AlimentoCategoria"
 					value="#{alimentoMB.alimento.categoria}" required="true"
 					requiredMessage="Preencha o nome da Categoria" />
 				<p:message for="AlimentoCategoria" />
 			</h:panelGrid>
-			
-			
+
+
 			<h:panelGrid columns="2">
 			Quantidade-Estoque :<p:inputText id="AlimentoQTDE"
 					value="#{alimentoMB.alimento.quantideEstoque}" required="true"
 					requiredMessage="Preencha a Quantidade em estoque" />
 				<p:message for="AlimentoQTDE" />
 			</h:panelGrid>
-			
+
 			<h:panelGrid columns="2">
 			Observações :<p:inputText id="AlimentoOBS"
 					value="#{alimentoMB.alimento.principioAtivo}" required="true"
@@ -50,16 +50,10 @@
 				<p:message for="AlimentoOBS" />
 			</h:panelGrid>
 
+			<p:commandButton update="" value="Cadastrar"
+				actionListener="#{alimentoMB.salvar()}" />
 		</h:panelGrid>
 
-		<div id="BotaoCadastro">
-			<h:panelGrid class="mt-4" columns="1">
-				<p:commandButton update="" value="Salvar"
-					actionListener="#{alimentoMB.salvar()}" />
-				<a class="btn btn-dark mt-5" href="inicio.xhtml" role="button">Voltar</a>
-				<a class="btn btn-info mt-5" href="#" role="button">Listar</a>
-			</h:panelGrid>
-		</div>
 	</h:form>
 
 </body>

@@ -22,19 +22,18 @@
 		<h:panelGrid cellpadding="10">
 
 			<h:panelGrid columns="2">
-			Nome :<p:inputText id="FazendaNome"
-					value="#{fazendaMB.fazenda.nome}" required="true"
-					requiredMessage="Preencha o Nome" />
+			Nome :<p:inputText id="FazendaNome" value="#{fazendaMB.fazenda.nome}"
+					required="true" requiredMessage="Preencha o Nome" />
 				<p:message for="FazendaNome" />
 			</h:panelGrid>
-			
+
 			<h:panelGrid columns="2">
 			Cidade :<p:inputText id="FazendaCidade"
 					value="#{fazendaMB.fazenda.cidade}" required="true"
 					requiredMessage="Preencha a Cidade" />
 				<p:message for="FazendaCidade" />
 			</h:panelGrid>
-			
+
 			<h:panelGrid columns="2">
 			Estado :<p:inputText id="FazendaEstado"
 					value="#{fazendaMB.fazenda.estado}" required="true"
@@ -48,14 +47,14 @@
 					requiredMessage="Preencha a Estado" />
 				<p:message for="FazendaEndereco" />
 			</h:panelGrid>
-			
+
 			<h:panelGrid columns="2">
 			Complemento :<p:inputText id="FazendaComp"
 					value="#{fazendaMB.fazenda.complemento}" required="true"
 					requiredMessage="Preencha o complemento" />
 				<p:message for="FazendaComp" />
 			</h:panelGrid>
-			
+
 			<h:panelGrid columns="2">
 			Hectares :<p:inputText id="FazendaHT"
 					value="#{fazendaMB.fazenda.hectares}" required="true"
@@ -63,17 +62,9 @@
 				<p:message for="FazendaHT" />
 			</h:panelGrid>
 
-
+			<p:commandButton update="" value="Cadastrar"
+				actionListener="#{fazendaMB.salvar()}" />
 		</h:panelGrid>
-
-		<div id="BotaoCadastro">
-			<h:panelGrid class="mt-4" columns="1">
-				<p:commandButton update="" value="Salvar"
-					actionListener="#{alimentoMB.salvar()}" />
-				<a class="btn btn-dark mt-5" href="inicio.xhtml" role="button">Voltar</a>
-				<a class="btn btn-info mt-5" href="#" role="button">Listar</a>
-			</h:panelGrid>
-		</div>
 	</h:form>
 
 </body>

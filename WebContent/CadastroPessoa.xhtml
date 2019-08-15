@@ -94,21 +94,10 @@
 					requiredMessage="Preencha o bairro" />
 				<p:message for="nomeCategoria" />
 			</h:panelGrid>
-
+			
+			<p:commandButton update="" value="Cadastrar"
+				actionListener="#{pessoaMB.inserir()}" />
 		</h:panelGrid>
-
-		<div id="BotaoCadastro">
-
-			<h:panelGrid class="mt-4" columns="1">
-				<p:commandButton update="" value="Salvar"
-					actionListener="#{pessoaMB.inserir()}" />
-				<a class="btn btn-dark mt-5" href="inicio.xhtml" role="button">Voltar</a>
-				<a class="btn btn-info mt-5" href="#" role="button">Listar</a>
-			</h:panelGrid>
-
-		</div>
-
-
 	</h:form>
 
 </body>

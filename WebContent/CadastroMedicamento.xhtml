@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+		crossorigin="anonymous" />
+</h:head>
+<body>
+
+	<h:form id="formulariodeCadastroFazenda">
+
+		<div class="alert alert-dark text-center" role="alert">
+			<h2>Cadastro de Medicamento</h2>
+		</div>
+
+		<h:panelGrid cellpadding="10">
+
+			<h:panelGrid columns="2">
+			Fabricante :<p:inputText id="FabricanteFab"
+					value="#{medicamentoMB.medicamento.fabricante}" required="true"
+					requiredMessage="Preencha o Nome" />
+				<p:message for="FabricanteFab" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="2">
+			Quantidade em estoque :<p:inputText id="Fabricanteqtde"
+					value="#{medicamentoMB.medicamento.quantideEstoque}"
+					required="true" requiredMessage="Preencha o Nome" />
+				<p:message for="Fabricanteqtde" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="2">
+			Observação :<p:inputText id="FabricanteOBS"
+					value="#{medicamentoMB.medicamento.principioAtivo}" required="true"
+					requiredMessage="Preencha o Nome" />
+				<p:message for="FabricanteOBS" />
+			</h:panelGrid>
+
+			<p:commandButton update="" value="Cadastrar"
+				actionListener="#{medicamentoMB.salvar()}" />
+		</h:panelGrid>
+
+	</h:form>
+
+</body>
+</html>
