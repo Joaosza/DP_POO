@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+		crossorigin="anonymous" />
+</h:head>
+<body>
+
+	<h:form id="formulariodeCadastroPessoa">
+
+		<div class="alert alert-dark text-center" role="alert">
+			<h2>Cadastro de Alimento</h2>
+		</div>
+
+		<h:panelGrid cellpadding="10">
+
+			<h:panelGrid columns="2">
+			Nome :<p:inputText id="AlimentoNome"
+					value="#{alimentoMB.alimento.nome}" required="true"
+					requiredMessage="Preencha o nome do Alimento" />
+				<p:message for="AlimentoNome" />
+			</h:panelGrid>
+			
+			<h:panelGrid columns="2">
+			Categoria :<p:inputText id="AlimentoCategoria"
+					value="#{alimentoMB.alimento.categoria}" required="true"
+					requiredMessage="Preencha o nome da Categoria" />
+				<p:message for="AlimentoCategoria" />
+			</h:panelGrid>
+			
+			
+			<h:panelGrid columns="2">
+			Quantidade-Estoque :<p:inputText id="AlimentoQTDE"
+					value="#{alimentoMB.alimento.quantideEstoque}" required="true"
+					requiredMessage="Preencha a Quantidade em estoque" />
+				<p:message for="AlimentoQTDE" />
+			</h:panelGrid>
+			
+			<h:panelGrid columns="2">
+			Observações :<p:inputText id="AlimentoOBS"
+					value="#{alimentoMB.alimento.principioAtivo}" required="true"
+					requiredMessage="Preencha a Quantidade em estoque" />
+				<p:message for="AlimentoOBS" />
+			</h:panelGrid>
+
+		</h:panelGrid>
+
+		<div id="BotaoCadastro">
+			<h:panelGrid class="mt-4" columns="1">
+				<p:commandButton update="" value="Salvar"
+					actionListener="#{alimentoMB.salvar()}" />
+				<a class="btn btn-dark mt-5" href="inicio.xhtml" role="button">Voltar</a>
+				<a class="btn btn-info mt-5" href="#" role="button">Listar</a>
+			</h:panelGrid>
+		</div>
+	</h:form>
+
+</body>
+</html>

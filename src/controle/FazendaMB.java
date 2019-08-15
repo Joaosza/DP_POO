@@ -21,4 +21,13 @@ public class FazendaMB {
 		}
 		fazenda = new Fazenda();
 	}
+
+	public Fazenda getFazenda() {
+		return fazenda;
+	}
+
+	public void setFazenda(Fazenda fazenda) {
+		this.fazenda = fazenda;
+	}
+
 }

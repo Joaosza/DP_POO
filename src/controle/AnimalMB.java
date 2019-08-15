@@ -22,4 +22,12 @@ public class AnimalMB {
 		animal = new Animal();
 	}
 
+	public Animal getAnimal() {
+		return animal;
+	}
+
+	public void setAnimal(Animal animal) {
+		this.animal = animal;
+	}
+
 }

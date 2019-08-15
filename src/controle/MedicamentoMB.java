@@ -22,4 +22,12 @@ public class MedicamentoMB {
 		medicamento = new Medicamento();
 	}
 
+	public Medicamento getMedicamento() {
+		return medicamento;
+	}
+
+	public void setMedicamento(Medicamento medicamento) {
+		this.medicamento = medicamento;
+	}
+
 }

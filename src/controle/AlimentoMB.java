@@ -13,13 +13,21 @@ public class AlimentoMB {
 	private Alimento alimento = new Alimento();
 	private DAOGenerico<Alimento> dao = new DAOGenerico<>(Alimento.class);
 
-	//metodo
+	// metodo
 	public void salvar() {
 		if (alimento.getId() == null) {
 			dao.salvar(alimento);
 		} else {
 		}
 		alimento = new Alimento();
+	}
+
+	public Alimento getAlimento() {
+		return alimento;
+	}
+
+	public void setAlimento(Alimento alimento) {
+		this.alimento = alimento;
 	}
 
 }

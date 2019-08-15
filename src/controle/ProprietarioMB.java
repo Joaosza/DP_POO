@@ -13,14 +13,21 @@ public class ProprietarioMB {
 
 	private Proprietario pro = new Proprietario();
 	private DAOGenerico<Proprietario> dao = new DAOGenerico<>(Proprietario.class);
-	
-	
+
 	public void salvar() {
-		
-		if(pro.getId()==null) {
+
+		if (pro.getId() == null) {
 			dao.salvar(pro);
-		}else {
+		} else {
 		}
 		pro = new Proprietario();
+	}
+
+	public Proprietario getPro() {
+		return pro;
+	}
+
+	public void setPro(Proprietario pro) {
+		this.pro = pro;
 	}
 }
