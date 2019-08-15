@@ -8,7 +8,8 @@ public class DAOGenerico<T> {
 
 	private static EntityManager entityManager;
 	private Class<T> classe;
-
+	
+	//construtor
 	public DAOGenerico(Class<T> classe) {
 		this.classe = classe;
 	}

@@ -16,6 +16,7 @@ public class Principal {
 				
 		//TESTE HERANÇA
 		
+				//Objeto
 		Funcionario fun = new Funcionario();
 		DAOGenerico<Funcionario> daoFuncionario = new DAOGenerico<>(Funcionario.class);
 
@@ -81,25 +82,7 @@ public class Principal {
 		animal.setRaca("Jersey");
 		animal.setSexo(true);
 		daoAni.salvar(animal);
-		
+	
 	}
-
 }
 
-
-//Pessoa
-
-//Pessoa pessoa = new Pessoa();
-//DAOGenerico<Pessoa> daoP = new DAOGenerico<>(Pessoa.class);
-//
-//pessoa.setNome("bruno");
-//pessoa.setRg("123123123");
-//pessoa.setTelefone("456456456");
-//pessoa.setEmail("joao@hotmail.com");
-//pessoa.setCpf("789789789789");
-//pessoa.setBairro("Jardim das olivas");
-//pessoa.setCidade("Paranavai");
-//pessoa.setSexo(true);
-//pessoa.setUf("PR");
-//pessoa.setCategoia("Funcionario");
-//daoP.salvar(pessoa);
