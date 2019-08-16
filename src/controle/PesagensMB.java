@@ -1,5 +1,7 @@
 package controle;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -8,7 +10,7 @@ import entidades.Pesagens;
 
 @ManagedBean
 @ViewScoped
-public class PesagensMB {
+public class PesagensMB implements Serializable{
 
 	private Pesagens pesagens = new Pesagens();
 	private DAOGenerico<Pesagens> dao = new DAOGenerico<>(Pesagens.class);

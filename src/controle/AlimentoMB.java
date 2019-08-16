@@ -1,5 +1,7 @@
 package controle;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -8,7 +10,7 @@ import entidades.Alimento;
 
 @ManagedBean
 @ViewScoped
-public class AlimentoMB {
+public class AlimentoMB implements Serializable{
 
 	private Alimento alimento = new Alimento();
 	private DAOGenerico<Alimento> dao = new DAOGenerico<>(Alimento.class);

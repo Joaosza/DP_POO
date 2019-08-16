@@ -1,5 +1,7 @@
 package controle;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -9,7 +11,7 @@ import entidades.Proprietario;
 
 @ManagedBean
 @ViewScoped
-public class ProprietarioMB {
+public class ProprietarioMB implements Serializable{
 
 	private Proprietario pro = new Proprietario();
 	private DAOGenerico<Proprietario> dao = new DAOGenerico<>(Proprietario.class);

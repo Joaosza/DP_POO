@@ -1,5 +1,6 @@
 package controle;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import entidades.Pessoa;
 
 @ManagedBean
 @ViewScoped
-public class PessoaMB {
+public class PessoaMB implements Serializable{
 
 	private Pessoa pessoa = new Pessoa();
 	private DAOGenerico<Pessoa> daoP = new DAOGenerico<>(Pessoa.class);

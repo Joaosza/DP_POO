@@ -1,5 +1,7 @@
 package controle;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -8,8 +10,12 @@ import entidades.Medicamento;
 
 @ManagedBean
 @ViewScoped
-public class MedicamentoMB {
+public class MedicamentoMB implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Medicamento medicamento = new Medicamento();
 	private DAOGenerico<Medicamento> dao = new DAOGenerico<>(Medicamento.class);
 

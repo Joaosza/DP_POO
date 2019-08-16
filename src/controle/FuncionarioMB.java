@@ -1,5 +1,7 @@
 package controle;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -8,7 +10,7 @@ import entidades.Funcionario;
 
 @ManagedBean
 @ViewScoped
-public class FuncionarioMB {
+public class FuncionarioMB implements Serializable{
 
 	private Funcionario fun = new Funcionario();
 	private DAOGenerico<Funcionario> dao = new DAOGenerico<>(Funcionario.class);

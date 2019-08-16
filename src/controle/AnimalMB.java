@@ -1,5 +1,7 @@
 package controle;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -8,7 +10,7 @@ import entidades.Animal;
 
 @ManagedBean
 @ViewScoped
-public class AnimalMB {
+public class AnimalMB implements Serializable{
 
 	private Animal animal = new Animal();
 	private DAOGenerico<Animal> dao = new DAOGenerico<>(Animal.class);

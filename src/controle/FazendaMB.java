@@ -1,5 +1,7 @@
 package controle;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -8,7 +10,7 @@ import entidades.Fazenda;
 
 @ManagedBean
 @ViewScoped
-public class FazendaMB {
+public class FazendaMB implements Serializable{
 
 	private Fazenda fazenda = new Fazenda();
 	private DAOGenerico<Fazenda> dao = new DAOGenerico<>(Fazenda.class);
