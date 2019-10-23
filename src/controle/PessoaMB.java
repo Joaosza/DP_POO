@@ -12,7 +12,7 @@ import entidades.Pessoa;
 
 @ManagedBean
 @ViewScoped
-public class PessoaMB implements Serializable{
+public class PessoaMB implements Serializable {
 
 	private Pessoa pessoa = new Pessoa();
 	private DAOGenerico<Pessoa> daoP = new DAOGenerico<>(Pessoa.class);
