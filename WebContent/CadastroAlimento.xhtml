@@ -50,54 +50,53 @@
 				<p:message for="AlimentoOBS" />
 			</h:panelGrid>
 
-			<p:commandButton update="@form,formularioTabelaAlimento" value="Salvar"
-				actionListener="#{alimentoMB.inserir()}" />
+			<p:commandButton update="@form,formularioTabelaAlimento"
+				value="Salvar" actionListener="#{alimentoMB.inserir()}" />
 		</h:panelGrid>
 
 	</h:form>
-	
+
 	<h:form id="formularioTabelaAlimento">
-					<p:dataTable var="ali" value="#{alimentoMB.alimentos}">
-						<p:column headerText="Id">
-							<h:outputText value="#{ali.id}" />
-						</p:column>
-						<p:column headerText="Nome">
-							<h:outputText value="#{ali.nome}" />
-						</p:column>
-						<p:column headerText="Categoria">
-							<h:outputText value="#{ali.categoria}" />
-						</p:column>
-						<p:column headerText="Quantidade Estoque">
-							<h:outputText value="#{ali.quantideEstoque}" />
-						</p:column>
-						<p:column headerText="Principio Ativo">
-							<h:outputText value="#{ali.principioAtivo}" />
-						</p:column>
+		<p:dataTable var="ali" value="#{alimentoMB.alimentos}">
+			<p:column headerText="Id">
+				<h:outputText value="#{ali.id}" />
+			</p:column>
+			<p:column headerText="Nome">
+				<h:outputText value="#{ali.nome}" />
+			</p:column>
+			<p:column headerText="Categoria">
+				<h:outputText value="#{ali.categoria}" />
+			</p:column>
+			<p:column headerText="Quantidade Estoque">
+				<h:outputText value="#{ali.quantideEstoque}" />
+			</p:column>
+			<p:column headerText="Principio Ativo">
+				<h:outputText value="#{ali.principioAtivo}" />
+			</p:column>
 
-						<p:column headerText="Opções">
-							<p:commandButton value="Alterar"
-								update="formulariodeCadastroPessoa">
-								<f:setPropertyActionListener value="#{cli}"
-									target="#{clienteMB.cliente}" />
-							</p:commandButton>
+			<p:column headerText="Opções">
+				<p:commandButton value="Alterar" update="formulariodeCadastroPessoa">
+					<f:setPropertyActionListener value="#{ali}"
+						target="#{alimentoMB.alimento}" />
+				</p:commandButton>
 
-							<p:commandButton value="Excluir"
-								actionListener="#{clienteMB.excluir(cli.id)}" update="@form">
-								<p:confirm header="Confirmação"
-									message="Deseja excluir o cliente?" icon="ui-icon-alert" />
-							</p:commandButton>
-						</p:column>
-					</p:dataTable>
+				<p:commandButton value="Excluir"
+					actionListener="#{alimentoMB.excluir(ali.id)}" update="@form">
+					<p:confirm header="Confirmação" message="Deseja excluir o cliente?"
+						icon="ui-icon-alert" />
+				</p:commandButton>
+			</p:column>
+		</p:dataTable>
 
-					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
-						<p:commandButton value="Sim" type="button"
-							styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
-						<p:commandButton value="Não" type="button"
-							styleClass="ui-confirmdialog-no" icon="ui-icon-check" />
-					</p:confirmDialog>
-				</h:form>
-	
-	
+		<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+			<p:commandButton value="Sim" type="button"
+				styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+			<p:commandButton value="Não" type="button"
+				styleClass="ui-confirmdialog-no" icon="ui-icon-check" />
+		</p:confirmDialog>
+	</h:form>
+
+
 
 </body>
 </html>
