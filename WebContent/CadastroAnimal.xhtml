@@ -71,10 +71,52 @@
 			</h:panelGrid>
 
 
-			<p:commandButton update="" value="Cadastrar"
+			<p:commandButton update="@form,formularioTabelaAnimal" value="Cadastrar"
 				actionListener="#{animalMB.salvar()}" />
 		</h:panelGrid>
+	</h:form>
+	
+	<h:form id="formularioTabelaAnimal">
+		<p:dataTable var="ani" value="#{animalMB.animais}">
+			<p:column headerText="Id">
+				<h:outputText value="#{ani.id}" />
+			</p:column>
+			<p:column headerText="Identificação">
+				<h:outputText value="#{ani.identificacao}" />
+			</p:column>
+			<p:column headerText="Categoria">
+				<h:outputText value="#{ani.categoria}" />
+			</p:column>
+			<p:column headerText="Especie">
+				<h:outputText value="#{ani.especie}" />
+			</p:column>
+			<p:column headerText="Raça">
+				<h:outputText value="#{ani.raca}" />
+			</p:column>
+				<p:column headerText="Sexo">
+				<h:outputText value="#{ani.sexo}" />
+			</p:column>
 
+			<p:column headerText="Opções">
+				<p:commandButton value="Alterar" update="formulariodeCadastroPessoa">
+					<f:setPropertyActionListener value="#{ani}"
+						target="#{animalMB.animal}" />
+				</p:commandButton>
+
+				<p:commandButton value="Excluir"
+					actionListener="#{animalMB.excluir(ani.id)}" update="@form">
+					<p:confirm header="Confirmação" message="Deseja excluir o cliente?"
+						icon="ui-icon-alert" />
+				</p:commandButton>
+			</p:column>
+		</p:dataTable>
+
+		<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+			<p:commandButton value="Sim" type="button"
+				styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+			<p:commandButton value="Não" type="button"
+				styleClass="ui-confirmdialog-no" icon="ui-icon-check" />
+		</p:confirmDialog>
 	</h:form>
 
 </body>

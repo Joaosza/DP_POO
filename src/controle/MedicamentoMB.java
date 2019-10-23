@@ -12,9 +12,6 @@ import entidades.Medicamento;
 @ViewScoped
 public class MedicamentoMB implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Medicamento medicamento = new Medicamento();
 	private DAOGenerico<Medicamento> dao = new DAOGenerico<>(Medicamento.class);
