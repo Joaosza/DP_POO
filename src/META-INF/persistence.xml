@@ -10,6 +10,7 @@
 		<class>entidades.Fazenda</class>
 		<class>entidades.Medicamento</class>
 		<class>entidades.Pesagens</class>
+		<class>entidades.vacinacao</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/POO" />

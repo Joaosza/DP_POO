@@ -17,7 +17,11 @@ public class FazendaMB implements Serializable{
 	private Fazenda fazenda = new Fazenda();
 	private List<Fazenda> fazendas = new ArrayList<>();
 	private DAOGenerico<Fazenda> dao = new DAOGenerico<>(Fazenda.class);
-
+	
+	public FazendaMB() {
+		fazendas = dao.buscarTodos();
+	}
+	
 	public void salvar() {
 		if (fazenda.getId() == null) {
 			dao.salvar(fazenda);

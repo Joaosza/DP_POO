@@ -18,6 +18,10 @@ public class PessoaMB implements Serializable {
 	private List<Pessoa> pessoas = new ArrayList<>();
 	private DAOGenerico<Pessoa> dao = new DAOGenerico<>(Pessoa.class);
 
+	public PessoaMB() {
+		pessoas = dao.buscarTodos();
+	}
+
 	public void inserir() {
 		if (pessoa.getId() == null) {
 			dao.salvar(pessoa);

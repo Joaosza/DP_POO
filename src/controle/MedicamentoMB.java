@@ -18,7 +18,11 @@ public class MedicamentoMB implements Serializable {
 	private Medicamento medicamento = new Medicamento();
 	private List<Medicamento> medicamentos = new ArrayList<>();
 	private DAOGenerico<Medicamento> dao = new DAOGenerico<>(Medicamento.class);
-
+	
+	public MedicamentoMB() {
+		medicamentos = dao.buscarTodos();
+	}
+	
 	public void salvar() {
 		if (medicamento.getId() == null) {
 			dao.salvar(medicamento);

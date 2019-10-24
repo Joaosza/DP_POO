@@ -17,7 +17,11 @@ public class AnimalMB implements Serializable{
 	private Animal animal = new Animal();
 	private List<Animal> animais = new ArrayList<>();
 	private DAOGenerico<Animal> dao = new DAOGenerico<>(Animal.class);
-
+	
+	public AnimalMB() {
+		animais = dao.buscarTodos();
+	}
+	
 	public List<Animal> getAnimais() {
 		return animais;
 	}

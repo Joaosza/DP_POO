@@ -37,11 +37,10 @@
 
 
 			<h:panelGrid columns="1">		
-								Animal :<p:selectOneMenu
-					value="#{animalMB.animal.id}"
+				Animal :<p:selectOneMenu value="#{pesagensMB.pesagem.animal}"
 					converter="converterAnimal">
-					<f:selectItems value="#{animalMB.animais}" var="pes"
-						itemLabel="#{pes.id}" itemValue="#{pes}" />
+					<f:selectItems value="#{animalMB.animais}" var="ani"
+						itemLabel="#{ani.pelagem}" itemValue="#{ani}" />
 				</p:selectOneMenu>
 			</h:panelGrid>
 

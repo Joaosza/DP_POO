@@ -18,6 +18,10 @@ public class AlimentoMB implements Serializable{
 	private List<Alimento> alimentos = new ArrayList<>();
 	private DAOGenerico<Alimento> dao = new DAOGenerico<>(Alimento.class);
 	
+	public AlimentoMB() {
+		alimentos = dao.buscarTodos();
+	}
+	
 	public void inserir() {
 		if(alimento.getId()==null) {
 			dao.salvar(alimento);
