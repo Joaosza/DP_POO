@@ -17,6 +17,7 @@
 
 		<div class="alert alert-dark text-center" role="alert">
 			<h2>Cadastro de Medicamento</h2>
+			<a class="dropdown-item" href="inicio.xhtml">Inicio</a>
 		</div>
 
 		<h:panelGrid cellpadding="10">
@@ -42,10 +43,44 @@
 				<p:message for="FabricanteOBS" />
 			</h:panelGrid>
 
-			<p:commandButton update="" value="Cadastrar"
+			<p:commandButton update="@form,formularioTabelaMedicamento" value="Salvar"
 				actionListener="#{medicamentoMB.salvar()}" />
 		</h:panelGrid>
+	</h:form>
+	<h:form id="formularioTabelaMedicamento">
+		<p:dataTable var="med" value="#{medicamentoMB.medicamentos}">
+			<p:column headerText="Id">
+				<h:outputText value="#{med.id}" />
+			</p:column>
+			<p:column headerText="Cidade">
+				<h:outputText value="#{med.fabricante}" />
+			</p:column>
+			<p:column headerText="Estado">
+				<h:outputText value="#{med.quantideEstoque}" />
+			</p:column>
+			<p:column headerText="Complemento">
+				<h:outputText value="#{med.principioAtivo}" />
+			</p:column>
+			<p:column headerText="Opções">
+				<p:commandButton value="Alterar" update="formulariodeCadastroFazenda">
+					<f:setPropertyActionListener value="#{med}"
+						target="#{medicamentoMB.medicamento}" />
+				</p:commandButton>
 
+				<p:commandButton value="Excluir"
+					actionListener="#{medicamentoMB.excluir(med.id)}" update="@form">
+					<p:confirm header="Confirmação" message="Deseja excluir o cliente?"
+						icon="ui-icon-alert" />
+				</p:commandButton>
+			</p:column>
+		</p:dataTable>
+
+		<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+			<p:commandButton value="Sim" type="button"
+				styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+			<p:commandButton value="Não" type="button"
+				styleClass="ui-confirmdialog-no" icon="ui-icon-check" />
+		</p:confirmDialog>
 	</h:form>
 
 </body>

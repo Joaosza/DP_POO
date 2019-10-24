@@ -15,14 +15,30 @@ import entidades.Pessoa;
 public class PessoaMB implements Serializable {
 
 	private Pessoa pessoa = new Pessoa();
-	private DAOGenerico<Pessoa> daoP = new DAOGenerico<>(Pessoa.class);
+	private List<Pessoa> pessoas = new ArrayList<>();
+	private DAOGenerico<Pessoa> dao = new DAOGenerico<>(Pessoa.class);
 
 	public void inserir() {
 		if (pessoa.getId() == null) {
-			daoP.salvar(pessoa);
+			dao.salvar(pessoa);
 		} else {
+			dao.alterar(pessoa);
 		}
 		pessoa = new Pessoa();
+		pessoas = dao.buscarTodos();
+	}
+
+	public void excluir(Long id) {
+		dao.excluir(id);
+		pessoas = dao.buscarTodos();
+	}
+
+	public List<Pessoa> getPessoas() {
+		return pessoas;
+	}
+
+	public void setPessoas(List<Pessoa> pessoas) {
+		this.pessoas = pessoas;
 	}
 
 	public Pessoa getPessoa() {

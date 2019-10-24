@@ -14,6 +14,7 @@ public class Pesagens {
 	private Long id;
 	private String dia;
 	private String peso;
+	
 
 	public Long getId() {
 		return id;
