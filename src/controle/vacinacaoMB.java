@@ -1,13 +1,18 @@
 package controle;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
 import banco.DAOGenerico;
-import entidades.Pessoa;
 import entidades.vacinacao;
 
-public class vacinacaoMB {
+@ManagedBean
+@ViewScoped
+public class vacinacaoMB implements Serializable{
 
 	private vacinacao vacinacao = new vacinacao();
 	private List<vacinacao> vacinacoes = new ArrayList<>();
@@ -47,5 +52,7 @@ public class vacinacaoMB {
 	public void setVacinacoes(List<vacinacao> vacinacoes) {
 		this.vacinacoes = vacinacoes;
 	}
+	
+	
 
 }
