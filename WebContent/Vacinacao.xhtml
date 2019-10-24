@@ -24,7 +24,7 @@
 
 			<h:panelGrid columns="2">
 			Dia :<p:inputText id="pesagemDia" value="#{vacinacaoMB.vacinacao.dia}"
-					required="true" requiredMessage="Preencha o Dia" />
+					required="true" pattern="dd-mm-yyyy" requiredMessage="Preencha o Dia" />
 				<p:message for="pesagemDia" />
 			</h:panelGrid>
 			
