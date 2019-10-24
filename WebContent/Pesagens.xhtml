@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+		crossorigin="anonymous" />
+</h:head>
+<body>
+
+	<h:form id="formulariodeCadastroPessoa">
+
+		<div class="alert alert-dark text-center" role="alert">
+			<h2>Realizar Pesagens</h2>
+			<a class="dropdown-item" href="inicio.xhtml">Inicio</a>
+		</div>
+
+		<h:panelGrid cellpadding="10">
+
+			<h:panelGrid columns="2">
+			Dia :<p:inputText id="pesagemDia" value="#{pesagensMB.pesagem.dia}"
+					required="true" requiredMessage="Preencha o Dia" />
+				<p:message for="pesagemDia" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="2">
+			Peso :<p:inputText id="pesagemPeso"
+					value="#{pesagensMB.pesagem.peso}" required="true"
+					requiredMessage="Preencha o Peso" />
+				<p:message for="pesagemPeso" />
+			</h:panelGrid>
+
+
+			<h:panelGrid columns="1">		
+								Animal :<p:selectOneMenu
+					value="#{animalMB.animal.id}"
+					converter="converterAnimal">
+					<f:selectItems value="#{animalMB.animais}" var="pes"
+						itemLabel="#{pes.id}" itemValue="#{pes}" />
+				</p:selectOneMenu>
+			</h:panelGrid>
+
+			<p:commandButton update="@form,formularioTabelaPeso" value="Salvar"
+				actionListener="#{pesagensMB.salvar()}" />
+		</h:panelGrid>
+	</h:form>
+
+	<h:form id="formularioTabelaPeso">
+		<p:dataTable var="peso" value="#{pesagensMB.pesagens}">
+			<p:column headerText="Id">
+				<h:outputText value="#{peso.id}" />
+			</p:column>
+			<p:column headerText="Nome">
+				<h:outputText value="#{peso.dia}" />
+			</p:column>
+			<p:column headerText="Categoria">
+				<h:outputText value="#{peso.peso}" />
+			</p:column>
+
+			<p:column headerText="Opções">
+				<p:commandButton value="Alterar" update="formulariodeCadastroPessoa">
+					<f:setPropertyActionListener value="#{peso}"
+						target="#{pesagensMB.pesagem}" />
+				</p:commandButton>
+
+				<p:commandButton value="Excluir"
+					actionListener="#{pesagensMB.excluir(peso.id)}" update="@form">
+					<p:confirm header="Confirmação" message="Deseja excluir o item?"
+						icon="ui-icon-alert" />
+				</p:commandButton>
+			</p:column>
+		</p:dataTable>
+
+		<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+			<p:commandButton value="Sim" type="button"
+				styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+			<p:commandButton value="Não" type="button"
+				styleClass="ui-confirmdialog-no" icon="ui-icon-check" />
+		</p:confirmDialog>
+	</h:form>
+
+
+
+</body>
+</html>
