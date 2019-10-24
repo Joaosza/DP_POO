@@ -45,7 +45,7 @@
 			</h:panelGrid>
 
 			<p:commandButton update="@form,formularioTabelaVacinacao" value="Salvar"
-				actionListener="#{pesagensMB.salvar()}" />
+				actionListener="#{vacinacaoMB.inserir()}" />
 		</h:panelGrid>
 	</h:form>
 
@@ -66,12 +66,12 @@
 
 			<p:column headerText="Opções">
 				<p:commandButton value="Alterar" update="formulariodeCadastroPessoa">
-					<f:setPropertyActionListener value="#{peso}"
-						target="#{pesagensMB.pesagem}" />
+					<f:setPropertyActionListener value="#{vac}"
+						target="#{vacinacaoMB.vacinacao}" />
 				</p:commandButton>
 
 				<p:commandButton value="Excluir"
-					actionListener="#{pesagensMB.excluir(peso.id)}" update="@form">
+					actionListener="#{vacinacaoMB.excluir(vac.id)}" update="@form">
 					<p:confirm header="Confirmação" message="Deseja excluir o item?"
 						icon="ui-icon-alert" />
 				</p:commandButton>
