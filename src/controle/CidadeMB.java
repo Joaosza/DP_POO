@@ -1,12 +1,20 @@
 package controle;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import banco.DAOGenerico;
 import entidades.Cidade;
 
-public class CidadeMB {
+@ManagedBean
+@ViewScoped
+public class CidadeMB implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	private Cidade cidade = new Cidade();
 	private List<Cidade> cidades = new ArrayList<>();
 	private DAOGenerico<Cidade> dao = new DAOGenerico<>(Cidade.class);

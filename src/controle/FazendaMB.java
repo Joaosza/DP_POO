@@ -13,7 +13,8 @@ import entidades.Fazenda;
 @ManagedBean
 @ViewScoped
 public class FazendaMB implements Serializable{
-
+	
+	private static final long serialVersionUID = 1L;
 	private Fazenda fazenda = new Fazenda();
 	private List<Fazenda> fazendas = new ArrayList<>();
 	private DAOGenerico<Fazenda> dao = new DAOGenerico<>(Fazenda.class);

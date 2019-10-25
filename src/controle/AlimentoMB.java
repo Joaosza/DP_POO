@@ -13,7 +13,8 @@ import entidades.Alimento;
 @ManagedBean
 @ViewScoped
 public class AlimentoMB implements Serializable{
-
+	
+	private static final long serialVersionUID = 1L;
 	private Alimento alimento = new Alimento();
 	private List<Alimento> alimentos = new ArrayList<>();
 	private DAOGenerico<Alimento> dao = new DAOGenerico<>(Alimento.class);

@@ -13,7 +13,8 @@ import entidades.Pessoa;
 @ManagedBean
 @ViewScoped
 public class PessoaMB implements Serializable {
-
+	
+	private static final long serialVersionUID = 1L;
 	private Pessoa pessoa = new Pessoa();
 	private List<Pessoa> pessoas = new ArrayList<>();
 	private DAOGenerico<Pessoa> dao = new DAOGenerico<>(Pessoa.class);

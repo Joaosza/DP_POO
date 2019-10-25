@@ -1,12 +1,20 @@
 package controle;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import banco.DAOGenerico;
 import entidades.Estado;
 
-public class EstadoMB {
+@ManagedBean
+@ViewScoped
+public class EstadoMB implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	private Estado estado = new Estado();
 	private List<Estado> estados = new ArrayList<>();
 	private DAOGenerico<Estado> dao = new DAOGenerico<>(Estado.class);

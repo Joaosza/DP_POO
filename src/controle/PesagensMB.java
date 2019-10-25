@@ -13,7 +13,8 @@ import entidades.Pesagens;
 @ManagedBean
 @ViewScoped
 public class PesagensMB implements Serializable {
-
+	
+	private static final long serialVersionUID = 1L;
 	private Pesagens pesagem = new Pesagens();
 	private List<Pesagens> pesagens = new ArrayList<>();
 	private DAOGenerico<Pesagens> dao = new DAOGenerico<>(Pesagens.class);

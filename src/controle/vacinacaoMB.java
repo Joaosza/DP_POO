@@ -13,7 +13,8 @@ import entidades.vacinacao;
 @ManagedBean
 @ViewScoped
 public class vacinacaoMB implements Serializable{
-
+	
+	private static final long serialVersionUID = 1L;
 	private vacinacao vacinacao = new vacinacao();
 	private List<vacinacao> vacinacoes = new ArrayList<>();
 	private DAOGenerico<vacinacao> dao = new DAOGenerico<>(vacinacao.class);

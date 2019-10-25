@@ -13,7 +13,8 @@ import entidades.Animal;
 @ManagedBean
 @ViewScoped
 public class AnimalMB implements Serializable{
-
+	
+	private static final long serialVersionUID = 1L;
 	private Animal animal = new Animal();
 	private List<Animal> animais = new ArrayList<>();
 	private DAOGenerico<Animal> dao = new DAOGenerico<>(Animal.class);
