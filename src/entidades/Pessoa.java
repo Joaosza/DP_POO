@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Pessoa {
@@ -17,8 +18,10 @@ public class Pessoa {
 	private String email;
 	private String cpf; // String porque e improvavel que ira ter um tipo de operação matematica
 	private String bairro;
-	private String cidade;
-	private String uf;
+	@ManyToOne
+	private Cidade cidade;
+	@ManyToOne
+	private Estado uf;
 	private String sexo;
 	private String categoia;
 	private String dataNascimento;
@@ -79,19 +82,19 @@ public class Pessoa {
 		this.bairro = bairro;
 	}
 
-	public String getCidade() {
+	public Cidade getCidade() {
 		return cidade;
 	}
 
-	public void setCidade(String cidade) {
+	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
 
-	public String getUf() {
+	public Estado getUf() {
 		return uf;
 	}
 
-	public void setUf(String uf) {
+	public void setUf(Estado uf) {
 		this.uf = uf;
 	}
 

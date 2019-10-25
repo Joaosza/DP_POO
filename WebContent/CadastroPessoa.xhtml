@@ -36,11 +36,12 @@
 							<p:message for="nomeBairro" />
 						</h:panelGrid>
 
-						<h:panelGrid columns="2">
-			Cidade :<p:inputText id="nomeCidade"
-								value="#{pessoaMB.pessoa.cidade}" required="true"
-								requiredMessage="Preencha a Cidade" />
-							<p:message for="nomeCidade" />
+						<h:panelGrid columns="1">		
+				Cidade :<p:selectOneMenu value="#{pessoaMB.pessoa.cidade}"
+								converter="converterCidade">
+								<f:selectItems value="#{cidadeMB.cidades}" var="cid"
+									itemLabel="#{cid.nome}" itemValue="#{cid}" />
+							</p:selectOneMenu>
 						</h:panelGrid>
 
 						<h:panelGrid columns="2">
@@ -73,10 +74,12 @@
 					</h:panelGrid>
 
 
-					<h:panelGrid columns="2" cellpadding="8">
-			UF :<p:inputText id="nomeuf" value="#{pessoaMB.pessoa.uf}"
-							required="true" requiredMessage="Preencha o bairro" />
-						<p:message for="nomeuf" />
+					<h:panelGrid columns="1">		
+				UF :<p:selectOneMenu value="#{pessoaMB.pessoa.uf}"
+							converter="converterEstado">
+							<f:selectItems value="#{estadoMB.estados}" var="est"
+								itemLabel="#{est.uf}" itemValue="#{est}" />
+						</p:selectOneMenu>
 					</h:panelGrid>
 
 				</div>
@@ -106,7 +109,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<p:commandButton update="@form,formularioTabelaPessoa" value="Salvar"
 			actionListener="#{pessoaMB.inserir()}" />
 	</h:form>
@@ -131,7 +134,7 @@
 			<p:column headerText="Opções">
 				<p:commandButton value="Alterar" update="formulariodeCadastroPessoa">
 					<f:setPropertyActionListener value="#{pes}"
-						target="#{pessoaMB.pessoas}" />
+						target="#{pessoaMB.pessoa}" />
 				</p:commandButton>
 
 				<p:commandButton value="Excluir"
