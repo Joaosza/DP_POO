@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Cidade {
@@ -12,6 +13,7 @@ public class Cidade {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
+	@ManyToOne
 	private Estado estado;
 
 	public Long getId() {
