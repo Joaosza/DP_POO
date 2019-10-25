@@ -33,11 +33,12 @@
 				<p:message for="FazendaCidade" />
 			</h:panelGrid>
 
-			<h:panelGrid columns="2">
-			Estado :<p:inputText id="FazendaEstado"
-					value="#{fazendaMB.fazenda.estado}" required="true"
-					requiredMessage="Preencha a Estado" />
-				<p:message for="FazendaEstado" />
+			<h:panelGrid columns="1">		
+				Estado :<p:selectOneMenu value="#{fazendaMB.fazenda.estado}"
+					converter="converterEstado">
+					<f:selectItems value="#{estadoMB.estados}" var="est"
+						itemLabel="#{est.uf}" itemValue="#{est}" />
+				</p:selectOneMenu>
 			</h:panelGrid>
 
 			<h:panelGrid columns="2">
@@ -78,17 +79,18 @@
 				<h:outputText value="#{faz.cidade}" />
 			</p:column>
 			<p:column headerText="Estado">
-				<h:outputText value="#{faz.estado}" />
+				<h:outputText value="#{faz.estado.uf}" />
 			</p:column>
 			<p:column headerText="Complemento">
 				<h:outputText value="#{faz.complemento}" />
 			</p:column>
-				<p:column headerText="Hectares">
+			<p:column headerText="Hectares">
 				<h:outputText value="#{faz.hectares}" />
 			</p:column>
 
 			<p:column headerText="Opções">
-				<p:commandButton value="Alterar" update="formulariodeCadastroFazenda">
+				<p:commandButton value="Alterar"
+					update="formulariodeCadastroFazenda">
 					<f:setPropertyActionListener value="#{faz}"
 						target="#{fazendaMB.fazenda}" />
 				</p:commandButton>

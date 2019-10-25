@@ -12,6 +12,15 @@ public class Estado {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
+	private String uf;
+
+	public String getUf() {
+		return uf;
+	}
+
+	public void setUf(String uf) {
+		this.uf = uf;
+	}
 
 	public Long getId() {
 		return id;
@@ -35,6 +44,7 @@ public class Estado {
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((uf == null) ? 0 : uf.hashCode());
 		return result;
 	}
 
@@ -56,6 +66,11 @@ public class Estado {
 			if (other.nome != null)
 				return false;
 		} else if (!nome.equals(other.nome))
+			return false;
+		if (uf == null) {
+			if (other.uf != null)
+				return false;
+		} else if (!uf.equals(other.uf))
 			return false;
 		return true;
 	}

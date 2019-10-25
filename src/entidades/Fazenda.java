@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Fazenda {
@@ -15,7 +16,8 @@ public class Fazenda {
 	private String endereco;
 	private String complemento;
 	private String hectares;
-	private String estado;
+	@ManyToOne
+	private Estado estado;
 	private String cidade;
 	private String uf;
 
@@ -59,11 +61,11 @@ public class Fazenda {
 		this.hectares = hectares;
 	}
 
-	public String getEstado() {
+	public Estado getEstado() {
 		return estado;
 	}
 
-	public void setEstado(String estado) {
+	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
 

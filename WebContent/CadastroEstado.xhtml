@@ -23,10 +23,17 @@
 		<h:panelGrid cellpadding="10">
 
 			<h:panelGrid columns="2">
-			Identificação :<p:inputText id="AnimalId"
+			Estado :<p:inputText id="AnimalId"
 					value="#{estadoMB.estado.nome}" required="true"
-					requiredMessage="Preencha a Identificacão" />
+					requiredMessage="Preencha o Estado" />
 				<p:message for="AnimalId" />
+			</h:panelGrid>
+			
+			<h:panelGrid columns="2">
+			UF :<p:inputText id="estado"
+					value="#{estadoMB.estado.uf}" required="true"
+					requiredMessage="Preencha a uf" />
+				<p:message for="estado" />
 			</h:panelGrid>
 			
 			
@@ -40,8 +47,12 @@
 			<p:column headerText="Id">
 				<h:outputText value="#{est.id}" />
 			</p:column>
-			<p:column headerText="Identificação">
+			<p:column headerText="Estado">
 				<h:outputText value="#{est.nome}" />
+			</p:column>
+			
+			<p:column headerText="UF">
+				<h:outputText value="#{est.uf}" />
 			</p:column>
 
 			<p:column headerText="Opções">
