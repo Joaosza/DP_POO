@@ -18,7 +18,8 @@ public class Fazenda {
 	private String hectares;
 	@ManyToOne
 	private Estado estado;
-	private String cidade;
+	@ManyToOne
+	private Cidade cidade;
 	private String uf;
 
 	public Long getId() {
@@ -69,11 +70,11 @@ public class Fazenda {
 		this.estado = estado;
 	}
 
-	public String getCidade() {
+	public Cidade getCidade() {
 		return cidade;
 	}
 
-	public void setCidade(String cidade) {
+	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
 
